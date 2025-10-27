@@ -15,11 +15,11 @@ public extension View {
                                 with type: FlagType = .roundedRect,
                                 size: CGSize?=nil) -> some View {
         let image = Image(code, bundle: Bundle.current)
-        return image.applyFlagType(type)
+        return image.applyFlagType(type, size: size)
     }
     
     
-    public func countryImageView(code: String) -> some View {
+    public func countryImageView(code: String) -> Image {
         Image(code, bundle: Bundle.current)
     }
 }
