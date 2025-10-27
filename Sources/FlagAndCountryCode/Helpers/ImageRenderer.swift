@@ -53,19 +53,20 @@ import SwiftUI
 
 internal extension Image {
     @ViewBuilder
-    func applyFlagType(_ type: FlagType) -> some View {
+    func applyFlagType(_ type: FlagType, size: CGSize?=nil) -> some View {
+        let size = size ?? type.size
         switch type {
         case .circle:
             self
-                .frame(width: type.size.width, height: type.size.height)
+                .frame(width: size.width, height: size.height)
                 .clipShape(Circle())
         case .square:
             self
-                .frame(width: type.size.width, height: type.size.height)
+                .frame(width: size.width, height: size.height)
                 .clipShape(Rectangle())
         case .roundedRect:
             self
-                .frame(width: type.size.width, height: type.size.height)
+                .frame(width: size.width, height: size.height)
                 .clipShape(RoundedRectangle(cornerRadius: 2))
         }
     }
