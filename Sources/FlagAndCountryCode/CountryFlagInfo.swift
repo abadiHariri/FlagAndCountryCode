@@ -12,15 +12,14 @@ import SwiftUI
 
 public extension View {
     public func countryImageView(code: String,
-                                with type: FlagType = .roundedRect,
-                                size: CGSize?=nil) -> some View {
-        let image = Image(code, bundle: Bundle.current)
-        return image.applyFlagType(type, size: size)
+                                size: CGSize) -> some View {
+        let image = Image(code, bundle: Bundle.flagsBundle)
+        return image.applyFlagType(size: size)
     }
     
     
     public func countryImageView(code: String) -> Image {
-        Image(code, bundle: Bundle.current)
+        Image(code, bundle: Bundle.flagsBundle)
     }
 }
 

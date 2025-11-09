@@ -19,7 +19,7 @@ private final class BundleToken {
 }
 
 public extension Bundle {
-    static var current: Bundle {
+    public static var flagsBundle: Bundle {
         BundleToken.bundle
     }
 }
